@@ -1,0 +1,24 @@
+{
+  "author": {
+    "name": "Evgeniy Nochevnov"
+  },
+  "bugs": "https://github.com/crosspath/eslint-config/issues",
+  "description": "My collection of configuration files for ESLint.",
+  "exports": {
+    ".": "./index.js",
+    "./rules": "./rules.js"
+  },
+  "homepage": "https://github.com/crosspath/eslint-config",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "license": "MIT",
+  "name": "@crosspath/eslint-config",
+  "peerDependencies": {
+    "eslint": ">=9"
+  },
+  "repository": "github:crosspath/eslint-config",
+  "type": "module",
+  "version": "0.0.1"
+}
