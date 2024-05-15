@@ -1,6 +1,10 @@
 # Changelog
 
-# v0.0.1
+## v0.0.2
+
+Update example link for comparison of changes in ESLint.
+
+## v0.0.1
 
 First release.
 
