@@ -16,9 +16,9 @@
   "license": "MIT",
   "name": "@crosspath/eslint-config",
   "peerDependencies": {
-    "eslint": ">=9"
+    "eslint": ">=9.8"
   },
   "repository": "github:crosspath/eslint-config",
   "type": "module",
-  "version": "0.0.2"
+  "version": "0.1.0"
 }

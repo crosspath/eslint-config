@@ -8,7 +8,7 @@ Works good with [Prettier](https://prettier.io/).
 
 Config files will be updated
 [in this repository](https://github.com/crosspath/eslint-config)
-about once a month after updating ESLint and its plugins.
+about once a quarter after updating ESLint and its plugins.
 
 ## Usage
 
@@ -54,7 +54,7 @@ How to review and update config values?
   for rules.
   Example link:
 
-    https://github.com/eslint/eslint/compare/v9.0.0...main
+    https://github.com/eslint/eslint/compare/v9.8.0...main
  
 2. Carefully update config files in this repository.
 3. Use test project to ensure these config files are OK.

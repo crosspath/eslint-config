@@ -45,7 +45,11 @@ export default {
     {considerPropertyDescriptor: true, includeCommonJSModuleExports: false}
   ],
   "func-names": [ERROR, "as-needed", {generators: "as-needed"}],
-  "func-style": [ERROR, "declaration", {allowArrowFunctions: true}],
+  "func-style": [
+    ERROR,
+    "declaration",
+    {allowArrowFunctions: true, overrides: {namedExports: "declaration"}}
+  ],
   "getter-return": [ERROR, {allowImplicit: false}],
   "grouped-accessor-pairs": [ERROR, "getBeforeSet"],
   "guard-for-in": ERROR,
@@ -99,7 +103,7 @@ export default {
   "no-console": [WARN, {allow: []}],
   "no-const-assign": ERROR,
   "no-constant-binary-expression": ERROR,
-  "no-constant-condition": [ERROR, {checkLoops: true}],
+  "no-constant-condition": [ERROR, {checkLoops: "allExceptWhileTrue"}],
   "no-constructor-return": ERROR,
   "no-continue": OFF,
   "no-control-regex": ERROR,
@@ -126,7 +130,7 @@ export default {
   "no-ex-assign": ERROR,
   "no-extend-native": [ERROR, {exceptions: []}],
   "no-extra-bind": ERROR,
-  "no-extra-boolean-cast": [ERROR, {enforceForLogicalOperands: true}],
+  "no-extra-boolean-cast": [ERROR, {enforceForInnerExpressions: true}],
   "no-extra-label": ERROR,
   "no-fallthrough": [
     WARN,
@@ -171,7 +175,7 @@ export default {
       ignoreDefaultValues: true
     }
   ],
-  "no-misleading-character-class": ERROR,
+  "no-misleading-character-class": [ERROR, {allowEscape: false}],
   "no-multi-assign": [ERROR, {ignoreNonDeclaration: true}],
   "no-multi-str": ERROR,
   "no-negated-condition": ERROR,
@@ -195,7 +199,8 @@ export default {
   "no-prototype-builtins": ERROR,
   "no-redeclare": [ERROR, {builtinGlobals: true}],
   "no-regex-spaces": OFF,
-  "no-restricted-exports": OFF, // Options: {restrictedNamedExports, restrictDefaultExports}.
+  // Options: {restrictedNamedExports, restrictedNamedExportsPattern, restrictDefaultExports}.
+  "no-restricted-exports": OFF,
   "no-restricted-globals": OFF, // Options: list of variable names.
   "no-restricted-imports": OFF, // Options: list of deps, paths, patterns.
   "no-restricted-properties": OFF, // Options: list of {message, object, property}.
