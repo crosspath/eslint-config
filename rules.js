@@ -28,7 +28,7 @@ export default {
     {ignoreConsecutiveComments: true, ignoreInlineComments: true, ignorePattern: ""}
   ],
   "class-methods-use-this": [WARN, {enforceForClassFields: true, exceptMethods: []}],
-  "complexity": [WARN, {max: 20}],
+  "complexity": [WARN, {max: 20, variant: "modified"}],
   "consistent-return": [ERROR, {treatUndefinedAsUnspecified: true}],
   "consistent-this": OFF,
   "constructor-super": ERROR,
@@ -326,7 +326,7 @@ export default {
   "radix": [ERROR, "always"],
   "require-atomic-updates": [ERROR, {allowProperties: false}],
   "require-await": ERROR,
-  "require-unicode-regexp": ERROR,
+  "require-unicode-regexp": [ERROR, {requireFlag: "v"}],
   "require-yield": ERROR,
   "sort-imports": [
     ERROR, {
