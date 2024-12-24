@@ -12,7 +12,8 @@ about once a quarter after updating ESLint and its plugins.
 
 ## Usage
 
-Create file `eslint.config.js` with these lines:
+Add this repo `https://github.com/crosspath/eslint-config.git` to `package.json` and then
+create file `eslint.config.js` with these lines:
 
 ```js
 import common from "@crosspath/eslint-config"
@@ -62,6 +63,5 @@ How to review and update config values?
 4. Update "version" of this package and minimal version of ESLint in "peerDependencies" in `package.json`.
 5. Add Changelog entry.
 6. Push changes to the repository and add git tag.
-7. Publish package version to NPM registry.
 
 License: MIT.

@@ -18,7 +18,10 @@
   "peerDependencies": {
     "eslint": ">=9.17"
   },
-  "repository": "github:crosspath/eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crosspath/eslint-config.git"
+  },
   "type": "module",
-  "version": "0.3.0"
+  "version": "0.3.1"
 }
