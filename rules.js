@@ -340,7 +340,13 @@ export default {
   "sort-keys": [
     ERROR,
     "asc",
-    {allowLineSeparatedGroups: true, caseSensitive: true, minKeys: 4, natural: true}
+    {
+      allowLineSeparatedGroups: true,
+      caseSensitive: true,
+      ignoreComputedKeys: false,
+      minKeys: 4,
+      natural: true
+    }
   ],
   "sort-vars": OFF,
   "strict": [ERROR, "global"],

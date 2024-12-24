@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0
+
+Update config files to ESLint 9.17.0.
+
 ## v0.2.0
 
 Update config files to ESLint 9.13.0.

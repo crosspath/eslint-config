@@ -52,6 +52,7 @@ How to review and update config values?
   Deprecated rules are still present here unless removed.
   Compare changes in files `docs/src/rules/*.md` to find added, removed and changed options
   for rules.
+  See default values for rules: `docs/src/_data/rules_meta.json`
   Example link:
 
     https://github.com/eslint/eslint/compare/v9.8.0...main
