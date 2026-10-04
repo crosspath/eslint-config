@@ -2,7 +2,9 @@
 
 [Shareable config](https://eslint.org/docs/latest/extend/shareable-configs) for ESLint v9+.
 
-ECMA Version set to 2022. It's the latest version that is supported by all major browsers.
+ECMA Version set to 2025. It's the latest version that is supported by all major browsers
+with 2 notable exceptions: Android Browser and Opera Mobile. They do not support some features of
+ECMAScript 2023-2025.
 
 Works good with [Prettier](https://prettier.io/).
 
@@ -38,8 +40,8 @@ that requires changes in your (client) code. Possible reasons for these are back
 changes in ESLint configuration format.
 
 Change of minor version (`*.1.* -> *.2.*`) means backwards-compatible changes in the package code,
-that normally should not require changes in client code. Possible reasons for these are
-changes, additions and removals of enabled/disabled rules for ESLint or its plugins.
+that normally should not require changes in client code. Possible reasons for these are changes,
+additions and removals of enabled/disabled rules for ESLint or its plugins.
 
 Change of build/patch version (`*.*.1 -> *.*.2`) means backwards-compatible changes in the package
 code, that do not require changes in client code. No rule changed here but some other package files

@@ -77,7 +77,7 @@ export default {
   ],
   "max-nested-callbacks": [WARN, {max: 4}],
   "max-params": [WARN, {max: 4}],
-  "max-statements": [WARN, {ignoreTopLevelFunctions: false, max: 10}],
+  "max-statements": [WARN, {max: 10}, {ignoreTopLevelFunctions: false}],
   "multiline-comment-style": [ERROR, "separate-lines", {checkJSDoc: false}],
   "new-cap": [
     ERROR, {
@@ -100,7 +100,7 @@ export default {
   "no-class-assign": ERROR,
   "no-compare-neg-zero": ERROR,
   "no-cond-assign": [ERROR, "always"],
-  "no-console": [WARN, {allow: []}],
+  "no-console": [WARN, {}],
   "no-const-assign": ERROR,
   "no-constant-binary-expression": ERROR,
   "no-constant-condition": [ERROR, {checkLoops: "allExceptWhileTrue"}],
@@ -191,7 +191,7 @@ export default {
   "no-octal-escape": ERROR,
   "no-param-reassign": [
     ERROR,
-    {ignorePropertyModificationsFor: [], ignorePropertyModificationsForRegex: [], props: false}
+    {props: false} // {ignorePropertyModificationsFor, ignorePropertyModificationsForRegex}
   ],
   "no-plusplus": [ERROR, {allowForLoopAfterthoughts: true}],
   "no-promise-executor-return": [ERROR, {allowVoid: true}],
@@ -272,7 +272,7 @@ export default {
     }
   ],
   "no-use-before-define": [
-    ERROR, {allowNamedImports: true, classes: true, functions: true, variables: true}
+    ERROR, {allowNamedExports: true, classes: true, functions: true, variables: true}
   ],
   "no-useless-assignment": ERROR,
   "no-useless-backreference": ERROR,

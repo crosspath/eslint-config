@@ -1,7 +1,7 @@
 export default {
   languageOptions: {
     // Latest version that is supported by all major browsers.
-    ecmaVersion: 2022
+    ecmaVersion: 2025
   },
-  linterOptions: {noInlineConfig: true},
+  linterOptions: {noInlineConfig: false, reportUnusedDisableDirectives: "warn"},
 }
