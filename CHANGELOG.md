@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.4.1
+
+Reorder rules and rule options by alphabet.
+
+Change rule option `"sort-keys".minKeys` from 4 to 2.
+
+Change rule option `"sort-imports".ignoreCase` from true to false, now it matches rule option
+`"sort-keys".caseSensitive = true`.
+
 ## v0.4.0
 
 Update config files to ESLint 9.39.5.
@@ -8,7 +17,7 @@ Set ECMA Version to 2025.
 
 Change linter options:
 * `noInlineConfig` to false (to allow disabling rules in code)
-* `reportUnusedDisableDirectives` to "warn" (default value is "error")
+* `reportUnusedDisableDirectives` to "warn" (default value is "warn")
 
 Change rules (as bug fixes for current ESLint version):
 * `max-statements` (split options)

@@ -10,8 +10,8 @@ const OFF = "off";
 //   https://github.com/prettier/eslint-config-prettier/blob/main/index.js
 export default {
   "accessor-pairs": OFF,
-  "arrow-body-style": [ERROR, "as-needed", {requireReturnForObjectLiteral: true}],
   "array-callback-return": [ERROR, {allowImplicit: false, allowVoid: true, checkForEach: true}],
+  "arrow-body-style": [ERROR, "as-needed", {requireReturnForObjectLiteral: true}],
   "block-scoped-var": ERROR,
   "camelcase": [
     ERROR, {
@@ -56,8 +56,8 @@ export default {
   "id-denylist": OFF,
   "id-length": [
     ERROR, {
-      exceptions: ["e", "i", "x"],
       exceptionPatterns: [],
+      exceptions: ["e", "i", "x"],
       max: 30,
       min: 2,
       properties: "always"
@@ -82,11 +82,11 @@ export default {
   "new-cap": [
     ERROR, {
       capIsNew: true,
-      capIsNewExceptions: [],
       capIsNewExceptionPattern: "",
+      capIsNewExceptions: [],
       newIsCap: true,
-      newIsCapExceptions: [],
       newIsCapExceptionPattern: "",
+      newIsCapExceptions: [],
       properties: true,
     }
   ],
@@ -115,10 +115,8 @@ export default {
   "no-dupe-else-if": ERROR,
   "no-dupe-keys": ERROR,
   "no-duplicate-case": ERROR,
-  "no-duplicate-imports": [
-    // I have no opinion on this option, chose default value.
-    ERROR, {includeExports: false}
-  ],
+  // I have no opinion on this option, chose default value.
+  "no-duplicate-imports": [ERROR, {includeExports: false}],
   "no-else-return": [ERROR, {allowElseIf: false}],
   "no-empty": [ERROR, {allowEmptyCatch: false}],
   "no-empty-character-class": ERROR,
@@ -151,11 +149,11 @@ export default {
   "no-invalid-this": [ERROR, {capIsConstructor: true}],
   "no-irregular-whitespace": [
     ERROR, {
-      skipStrings: false,
       skipComments: false,
-      skipRegExps: false,
-      skipTemplates: false,
       skipJSXText: false,
+      skipRegExps: false,
+      skipStrings: false,
+      skipTemplates: false,
     }
   ],
   "no-iterator": ERROR,
@@ -167,9 +165,9 @@ export default {
   "no-loss-of-precision": ERROR,
   "no-magic-numbers": [
     ERROR, {
-      ignore: [0],
       detectObjects: true,
       enforceConst: false,
+      ignore: [0],
       ignoreArrayIndexes: true,
       ignoreClassFieldInitialValues: true,
       ignoreDefaultValues: true
@@ -221,10 +219,7 @@ export default {
   "no-ternary": OFF,
   "no-this-before-super": ERROR,
   "no-throw-literal": ERROR,
-  "no-undef": [
-    // I have no opinion on this option, chose default value.
-    ERROR, {typeof: false}
-  ],
+  "no-undef": [ERROR, {typeof: false}], // I have no opinion on this option, chose default value.
   "no-undef-init": ERROR,
   "no-undefined": ERROR,
   "no-underscore-dangle": [
@@ -331,7 +326,7 @@ export default {
   "sort-imports": [
     ERROR, {
       allowSeparatedGroups: true,
-      ignoreCase: true,
+      ignoreCase: false,
       ignoreDeclarationSort: false,
       ignoreMemberSort: false,
       memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
@@ -344,7 +339,7 @@ export default {
       allowLineSeparatedGroups: true,
       caseSensitive: true,
       ignoreComputedKeys: false,
-      minKeys: 4,
+      minKeys: 2,
       natural: true
     }
   ],
