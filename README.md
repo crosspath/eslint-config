@@ -51,11 +51,13 @@ may be updated.
 
 How to review and update config values?
 
-1. Compare changes in config file `eslint-all.js` to find added and removed rules.
-  Deprecated rules are still present here unless removed.
-  Compare changes in files `docs/src/rules/*.md` to find added, removed and changed options
-  for rules.
-  See default values for rules: `docs/src/_data/rules_meta.json`
+1. Compare changes in these files to find added and removed rules & rule options:
+  ```plain
+  docs/src/_data/rules_meta.json
+  docs/src/rules/*.md
+  packages/js/src/configs/eslint-all.js
+  ```
+  Deprecated rules & rule options are still present here unless removed.
   Example link:
 
     https://github.com/eslint/eslint/compare/v9.8.0...main

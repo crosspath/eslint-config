@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.4.2
+
+Remove deprecated option from rule "radix".
+Enabled rules "no-unassigned-vars" & "preserve-caught-error".
+Enabled some options for rules "no-unused-expressions" & "no-unused-vars".
+
 ## v0.4.1
 
 Reorder rules and rule options by alphabet.

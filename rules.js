@@ -9,7 +9,7 @@ const OFF = "off";
 // Ensure not to enable these rules (or use workarounds):
 //   https://github.com/prettier/eslint-config-prettier/blob/main/index.js
 export default {
-  "accessor-pairs": OFF,
+  "accessor-pairs": OFF, // {enforceForClassMembers, enforceForTSTypes, getWithoutSet, setWithoutGet}
   "array-callback-return": [ERROR, {allowImplicit: false, allowVoid: true, checkForEach: true}],
   "arrow-body-style": [ERROR, "as-needed", {requireReturnForObjectLiteral: true}],
   "block-scoped-var": ERROR,
@@ -27,7 +27,13 @@ export default {
     "always",
     {ignoreConsecutiveComments: true, ignoreInlineComments: true, ignorePattern: ""}
   ],
-  "class-methods-use-this": [WARN, {enforceForClassFields: true, exceptMethods: []}],
+  "class-methods-use-this": [
+    WARN, {
+      // ignoreOverrideMethods, ignoreClassesWithImplements
+      enforceForClassFields: true,
+      exceptMethods: [],
+    }
+  ],
   "complexity": [WARN, {max: 20, variant: "modified"}],
   "consistent-return": [ERROR, {treatUndefinedAsUnspecified: true}],
   "consistent-this": OFF,
@@ -48,10 +54,14 @@ export default {
   "func-style": [
     ERROR,
     "declaration",
-    {allowArrowFunctions: true, overrides: {namedExports: "declaration"}}
+    {
+      allowArrowFunctions: true,
+      // allowTypeAnnotation
+      overrides: {namedExports: "declaration"},
+    }
   ],
   "getter-return": [ERROR, {allowImplicit: false}],
-  "grouped-accessor-pairs": [ERROR, "getBeforeSet"],
+  "grouped-accessor-pairs": [ERROR, "getBeforeSet"], // {enforceForTSTypes}
   "guard-for-in": ERROR,
   "id-denylist": OFF,
   "id-length": [
@@ -64,9 +74,8 @@ export default {
     }
   ],
   "id-match": OFF,
-  "init-declarations": OFF,
-  // Options: {applyDefaultIgnorePatterns, ignorePattern, position}.
-  "line-comment-position": OFF,
+  "init-declarations": OFF, // {ignoreForLoopInit}
+  "line-comment-position": OFF, // {applyDefaultIgnorePatterns, ignorePattern, position}
   "logical-assignment-operators": [ERROR, "always", {enforceForIfStatements: true}],
   "max-classes-per-file": [WARN, {ignoreExpressions: true, max: 1}],
   "max-depth": [ERROR, {max: 6}],
@@ -76,7 +85,7 @@ export default {
     {IIFEs: false, max: 10, skipBlankLines: true, skipComments: true}
   ],
   "max-nested-callbacks": [WARN, {max: 4}],
-  "max-params": [WARN, {max: 4}],
+  "max-params": [WARN, {max: 4}], // {countVoidThis}
   "max-statements": [WARN, {max: 10}, {ignoreTopLevelFunctions: false}],
   "multiline-comment-style": [ERROR, "separate-lines", {checkJSDoc: false}],
   "new-cap": [
@@ -116,7 +125,7 @@ export default {
   "no-dupe-keys": ERROR,
   "no-duplicate-case": ERROR,
   // I have no opinion on this option, chose default value.
-  "no-duplicate-imports": [ERROR, {includeExports: false}],
+  "no-duplicate-imports": [ERROR, {includeExports: false}], // {allowSeparateTypeImports}
   "no-else-return": [ERROR, {allowElseIf: false}],
   "no-empty": [ERROR, {allowEmptyCatch: false}],
   "no-empty-character-class": ERROR,
@@ -171,6 +180,10 @@ export default {
       ignoreArrayIndexes: true,
       ignoreClassFieldInitialValues: true,
       ignoreDefaultValues: true
+      // ignoreEnums
+      // ignoreNumericLiteralTypes
+      // ignoreReadonlyClassProperties
+      // ignoreTypeIndexes
     }
   ],
   "no-misleading-character-class": [ERROR, {allowEscape: false}],
@@ -197,11 +210,10 @@ export default {
   "no-prototype-builtins": ERROR,
   "no-redeclare": [ERROR, {builtinGlobals: true}],
   "no-regex-spaces": OFF,
-  // Options: {restrictedNamedExports, restrictedNamedExportsPattern, restrictDefaultExports}.
-  "no-restricted-exports": OFF,
-  "no-restricted-globals": OFF, // Options: list of variable names.
+  "no-restricted-exports": OFF,// {restrictedNamedExports, restrictedNamedExportsPattern, restrictDefaultExports}
+  "no-restricted-globals": OFF, // {checkGlobalObject, globalObjects, globals}
   "no-restricted-imports": OFF, // Options: list of deps, paths, patterns.
-  "no-restricted-properties": OFF, // Options: list of {message, object, property}.
+  "no-restricted-properties": OFF, // {allowObjects, allowProperties, message, object, property}
   "no-restricted-syntax": OFF, // Options: list of AST selectors.
   "no-return-assign": [ERROR, "always"],
   "no-script-url": ERROR,
@@ -210,15 +222,22 @@ export default {
   "no-sequences": [ERROR, {allowInParentheses: false}],
   "no-setter-return": ERROR,
   "no-shadow": [
-    ERROR,
-    {allow: [], builtinGlobals: true, hoist: "functions", ignoreOnInitialization: false}
+    ERROR, {
+      allow: [],
+      builtinGlobals: true,
+      hoist: "functions",
+      // ignoreFunctionTypeParameterNameValueShadow
+      ignoreOnInitialization: false,
+      // ignoreTypeValueShadow
+    }
   ],
-  "no-shadow-restricted-names": ERROR,
+  "no-shadow-restricted-names": ERROR, // {reportGlobalThis}
   "no-sparse-arrays": ERROR,
   "no-template-curly-in-string": ERROR,
   "no-ternary": OFF,
   "no-this-before-super": ERROR,
   "no-throw-literal": ERROR,
+  "no-unassigned-vars": ERROR,
   "no-undef": [ERROR, {typeof: false}], // I have no opinion on this option, chose default value.
   "no-undef-init": ERROR,
   "no-undefined": ERROR,
@@ -249,6 +268,7 @@ export default {
       allowTaggedTemplates: false,
       allowTernary: false,
       enforceForJSX: false,
+      ignoreDirectives: false,
     }
   ],
   "no-unused-labels": ERROR,
@@ -262,12 +282,21 @@ export default {
       destructuredArrayIgnorePattern: "^_",
       ignoreClassWithStaticInitBlock: true,
       ignoreRestSiblings: false,
+      ignoreUsingDeclarations: false,
       reportUsedIgnorePattern: false,
       vars: "all",
     }
   ],
   "no-use-before-define": [
-    ERROR, {allowNamedExports: true, classes: true, functions: true, variables: true}
+    ERROR, {
+      allowNamedExports: true,
+      classes: true,
+      // enums
+      functions: true,
+      // ignoreTypeReferences
+      // typedefs
+      variables: true,
+    }
   ],
   "no-useless-assignment": ERROR,
   "no-useless-backreference": ERROR,
@@ -276,15 +305,15 @@ export default {
   "no-useless-computed-key": [ERROR, {enforceForClassMembers: true}],
   "no-useless-concat": ERROR,
   "no-useless-constructor": ERROR,
-  "no-useless-escape": ERROR,
+  "no-useless-escape": ERROR, // {allowRegexCharacters}
   "no-useless-rename": [
     ERROR,
     {ignoreDestructuring: false, ignoreExport: false, ignoreImport: false}
   ],
   "no-useless-return": ERROR,
   "no-var": ERROR,
-  "no-void": OFF, // Options: {allowAsStatement: false}.
-  "no-warning-comments": OFF, // Options: {decoration, location, terms}.
+  "no-void": OFF, // {allowAsStatement}
+  "no-warning-comments": OFF, // {decoration, location, terms}
   "no-with": ERROR,
   "object-shorthand": [
     ERROR,
@@ -318,7 +347,8 @@ export default {
   "prefer-rest-params": ERROR,
   "prefer-spread": ERROR,
   "prefer-template": ERROR,
-  "radix": [ERROR, "always"],
+  "preserve-caught-error": [ERROR, {requireCatchParameter: true}],
+  "radix": ERROR,
   "require-atomic-updates": [ERROR, {allowProperties: false}],
   "require-await": ERROR,
   "require-unicode-regexp": [ERROR, {requireFlag: "v"}],
